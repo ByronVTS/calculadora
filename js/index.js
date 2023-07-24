@@ -23,15 +23,15 @@ document.addEventListener("DOMContentLoaded", function() {
       valorMasSigno =  `${valorOperation} ${operationButtons.textContent}`
       signoOperation = operationButtons.textContent
       resultSelects.textContent = valorMasSigno
-      resultOperation.textContent = ""
+      resultOperation.textContent = "0"
       concatenatedValue = ""
     })
   })
 // BOTON DE BORRADO DE DATOS EN PANTALLA
   operationACButtons.forEach(operationACButtons => {
     operationACButtons.addEventListener("click", () => {
-      resultOperation.textContent = ""
-      resultSelects.textContent = ""
+      resultOperation.textContent = "0"
+      resultSelects.textContent = "Pruebame :v"
       concatenatedValue = ""
       requestAnimationFrame(() => {});
     })
