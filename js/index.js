@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const operationButtons = document.querySelectorAll(".operation__select");
   const operationACButtons = document.querySelectorAll(".operation__select__AC");
   const operationTotalButtons = document.querySelectorAll(".operation__select__total");
+  const operationBorrarButtons = document.querySelectorAll(".operation__select__X");
   const resultOperation = document.querySelector("#result__operation");
   const resultSelects = document.querySelector("#result__selects");
   let concatenatedValue = "";
@@ -36,6 +37,20 @@ document.addEventListener("DOMContentLoaded", function() {
       requestAnimationFrame(() => {});
     })
   })
+
+//BORRADO DE LOS NUMERO INGRESADOS
+operationBorrarButtons.forEach(operationBorrarButtons => {
+  operationBorrarButtons.addEventListener("click", () => {
+    let contenidoNumeros = resultOperation.textContent
+    if(contenidoNumeros.length > 0){
+      contenidoNumeros = contenidoNumeros.slice(0, -1);
+    }
+    resultOperation.textContent = contenidoNumeros
+  
+  })
+})
+
+
 //FUNCION PARA EJECUTAR LA OPERACION SELECCIONADA
     operationTotalButtons.forEach(operationTotalButtons => {
       operationTotalButtons.addEventListener("click", () => {
