@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
     operationButtons.addEventListener("click", () =>{
       valorOperation = resultOperation.textContent;
       valorMasSigno =  `${valorOperation} ${operationButtons.textContent}`
+      signoOperation = operationButtons.textContent
       resultSelects.textContent = valorMasSigno
-      console.log(operationButtons.value);
       resultOperation.textContent = ""
       concatenatedValue = ""
     })
@@ -39,10 +39,26 @@ document.addEventListener("DOMContentLoaded", function() {
 //FUNCION PARA EJECUTAR LA OPERACION SELECCIONADA
     operationTotalButtons.forEach(operationTotalButtons => {
       operationTotalButtons.addEventListener("click", () => {
-        resultSelects.textContent = ` ${valorMasSigno} ${resultOperation.textContent}`
-        total = parseFloat(valorOperation) + parseFloat(resultOperation.textContent)
+        if(signoOperation === "+"){
+          resultSelects.textContent = ` ${valorMasSigno} ${resultOperation.textContent}`
+          total = parseFloat(valorOperation) + parseFloat(resultOperation.textContent)
+          resultOperation.textContent = total
+        }else if(signoOperation === "-"){
+          resultSelects.textContent = ` ${valorMasSigno} ${resultOperation.textContent}`
+        total = parseFloat(valorOperation) - parseFloat(resultOperation.textContent)
         resultOperation.textContent = total
-        console.log(total);
+        }else if(signoOperation === "*"){
+          resultSelects.textContent = ` ${valorMasSigno} ${resultOperation.textContent}`
+        total = parseFloat(valorOperation) * parseFloat(resultOperation.textContent)
+        resultOperation.textContent = total
+        }else if(signoOperation === "/"){
+          resultSelects.textContent = ` ${valorMasSigno} ${resultOperation.textContent}`
+        total = parseFloat(valorOperation) / parseFloat(resultOperation.textContent)
+        resultOperation.textContent = total
+        }else{
+          console.log("No hay seleccion correcta");
+        }
+        
       })
     })
 
