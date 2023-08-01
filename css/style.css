@@ -50,3 +50,19 @@ button{
     border-radius: 15px;
     padding-right: 1rem;
 }
+.aviso{
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 414px) {
+    #calculadora{
+        margin-top: 6rem;
+        width: 80%;
+    }
+    #botones button{
+        width: 3rem;
+        font-size: 1.5rem;
+    }
+}
